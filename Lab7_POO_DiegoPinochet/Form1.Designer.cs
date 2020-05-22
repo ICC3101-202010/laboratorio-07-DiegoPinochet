@@ -53,9 +53,10 @@
             this.Historial = new System.Windows.Forms.Button();
             this.CalculatorInput = new System.Windows.Forms.TextBox();
             this.HistorialDisplay = new System.Windows.Forms.Panel();
+            this.HistorialOutput = new System.Windows.Forms.Label();
             this.HistorialLabel = new System.Windows.Forms.Label();
             this.HistorialOut = new System.Windows.Forms.Button();
-            this.HistorialOutput = new System.Windows.Forms.Label();
+            this.EraseHistorial = new System.Windows.Forms.Button();
             this.CalculatorView.SuspendLayout();
             this.HistorialDisplay.SuspendLayout();
             this.SuspendLayout();
@@ -344,6 +345,7 @@
             // HistorialDisplay
             // 
             this.HistorialDisplay.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.HistorialDisplay.Controls.Add(this.EraseHistorial);
             this.HistorialDisplay.Controls.Add(this.HistorialOutput);
             this.HistorialDisplay.Controls.Add(this.HistorialLabel);
             this.HistorialDisplay.Controls.Add(this.HistorialOut);
@@ -352,6 +354,17 @@
             this.HistorialDisplay.Name = "HistorialDisplay";
             this.HistorialDisplay.Size = new System.Drawing.Size(494, 688);
             this.HistorialDisplay.TabIndex = 21;
+            // 
+            // HistorialOutput
+            // 
+            this.HistorialOutput.AutoSize = true;
+            this.HistorialOutput.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.HistorialOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HistorialOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistorialOutput.Location = new System.Drawing.Point(28, 191);
+            this.HistorialOutput.Name = "HistorialOutput";
+            this.HistorialOutput.Size = new System.Drawing.Size(2, 41);
+            this.HistorialOutput.TabIndex = 23;
             // 
             // HistorialLabel
             // 
@@ -375,16 +388,16 @@
             this.HistorialOut.UseVisualStyleBackColor = false;
             this.HistorialOut.Click += new System.EventHandler(this.HistorialOut_Click_1);
             // 
-            // HistorialOutput
+            // EraseHistorial
             // 
-            this.HistorialOutput.AutoSize = true;
-            this.HistorialOutput.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.HistorialOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.HistorialOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistorialOutput.Location = new System.Drawing.Point(25, 149);
-            this.HistorialOutput.Name = "HistorialOutput";
-            this.HistorialOutput.Size = new System.Drawing.Size(2, 60);
-            this.HistorialOutput.TabIndex = 23;
+            this.EraseHistorial.BackColor = System.Drawing.Color.Gray;
+            this.EraseHistorial.Location = new System.Drawing.Point(320, 98);
+            this.EraseHistorial.Name = "EraseHistorial";
+            this.EraseHistorial.Size = new System.Drawing.Size(132, 58);
+            this.EraseHistorial.TabIndex = 24;
+            this.EraseHistorial.Text = "Borrar Historial";
+            this.EraseHistorial.UseVisualStyleBackColor = false;
+            this.EraseHistorial.Click += new System.EventHandler(this.EraseHistorial_Click);
             // 
             // Form1
             // 
@@ -433,6 +446,7 @@
         private System.Windows.Forms.Button HistorialOut;
         private System.Windows.Forms.Label HistorialLabel;
         private System.Windows.Forms.Label HistorialOutput;
+        private System.Windows.Forms.Button EraseHistorial;
     }
 }
 

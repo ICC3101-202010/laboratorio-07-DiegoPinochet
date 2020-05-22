@@ -101,9 +101,9 @@ namespace Lab7_POO_DiegoPinochet
         {
             //Tengo que verificar que no se caiga la plataforma...
             string[] newInput = new string[2];
-            operations.Add(CalculatorInput.Text);
             string coma;
-
+            string calcText = CalculatorInput.Text;
+            operations.Add(calcText);
             if (CalculatorInput.Text.Contains("+") == true)
             {
                 newInput = CalculatorInput.Text.Split('+');
@@ -113,6 +113,7 @@ namespace Lab7_POO_DiegoPinochet
                     double sum = double.Parse(newInput[0]) + double.Parse(newInput[1]);
                     CalculatorInput.Text = sum.ToString();
                     operationsResult.Add(sum);
+                    
                 }
                 else
                 {
@@ -130,6 +131,7 @@ namespace Lab7_POO_DiegoPinochet
                     double sub = double.Parse(newInput[0]) - double.Parse(newInput[1]);
                     CalculatorInput.Text = sub.ToString();
                     operationsResult.Add(sub);
+                    
                 }
                 else
                 {
@@ -146,6 +148,7 @@ namespace Lab7_POO_DiegoPinochet
                     double mult = double.Parse(newInput[0]) * double.Parse(newInput[1]);
                     CalculatorInput.Text = mult.ToString();
                     operationsResult.Add(mult);
+                    
                 }
                 else
                 {
@@ -164,6 +167,7 @@ namespace Lab7_POO_DiegoPinochet
                         double div = double.Parse(newInput[0]) / double.Parse(newInput[1]);
                         CalculatorInput.Text = div.ToString(); //Necesito redondearlo a los x cant de decimales.
                         operationsResult.Add(div);
+                        
                     }
                     else
                     {
@@ -174,6 +178,7 @@ namespace Lab7_POO_DiegoPinochet
                 else
                 {
                     CalculatorInput.Text = "Math Error";
+                    operations.Remove(calcText);
                     return;
                 }
             }
@@ -254,8 +259,11 @@ namespace Lab7_POO_DiegoPinochet
             CalculatorView.BringToFront();
         }
 
-        private void HistorialView_TextChanged(object sender, EventArgs e)
+        private void EraseHistorial_Click(object sender, EventArgs e)
         {
+            HistorialOutput.ResetText();
+            operationsResult.Clear();
+            operations.Clear();
 
         }
     }
