@@ -49,6 +49,7 @@
             this.Delete = new System.Windows.Forms.Button();
             this.AC = new System.Windows.Forms.Button();
             this.CalculatorView = new System.Windows.Forms.Panel();
+            this.Historial = new System.Windows.Forms.Button();
             this.CalculatorInput = new System.Windows.Forms.TextBox();
             this.CalculatorView.SuspendLayout();
             this.SuspendLayout();
@@ -168,7 +169,7 @@
             this.button0.BackColor = System.Drawing.Color.Gray;
             this.button0.Location = new System.Drawing.Point(28, 527);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(58, 58);
+            this.button0.Size = new System.Drawing.Size(143, 58);
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
@@ -178,11 +179,11 @@
             // 
             this.Decimal.BackColor = System.Drawing.Color.Gray;
             this.Decimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Decimal.Location = new System.Drawing.Point(113, 527);
+            this.Decimal.Location = new System.Drawing.Point(198, 527);
             this.Decimal.Name = "Decimal";
             this.Decimal.Size = new System.Drawing.Size(58, 58);
             this.Decimal.TabIndex = 11;
-            this.Decimal.Text = ".";
+            this.Decimal.Text = ",";
             this.Decimal.UseVisualStyleBackColor = false;
             this.Decimal.Click += new System.EventHandler(this.Decimal_Click);
             // 
@@ -200,7 +201,7 @@
             // equal
             // 
             this.equal.BackColor = System.Drawing.Color.Gray;
-            this.equal.Location = new System.Drawing.Point(394, 527);
+            this.equal.Location = new System.Drawing.Point(393, 527);
             this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(58, 58);
             this.equal.TabIndex = 13;
@@ -270,6 +271,8 @@
             // AC
             // 
             this.AC.BackColor = System.Drawing.Color.DarkRed;
+            this.AC.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AC.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.AC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AC.Location = new System.Drawing.Point(394, 254);
             this.AC.Name = "AC";
@@ -282,6 +285,7 @@
             // CalculatorView
             // 
             this.CalculatorView.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CalculatorView.Controls.Add(this.Historial);
             this.CalculatorView.Controls.Add(this.CalculatorInput);
             this.CalculatorView.Controls.Add(this.CalculatorText);
             this.CalculatorView.Controls.Add(this.equal);
@@ -306,17 +310,28 @@
             this.CalculatorView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalculatorView.Location = new System.Drawing.Point(0, 0);
             this.CalculatorView.Name = "CalculatorView";
-            this.CalculatorView.Size = new System.Drawing.Size(485, 631);
+            this.CalculatorView.Size = new System.Drawing.Size(475, 643);
             this.CalculatorView.TabIndex = 20;
-            this.CalculatorView.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Historial
+            // 
+            this.Historial.BackColor = System.Drawing.Color.Gray;
+            this.Historial.Location = new System.Drawing.Point(319, 19);
+            this.Historial.Name = "Historial";
+            this.Historial.Size = new System.Drawing.Size(132, 58);
+            this.Historial.TabIndex = 21;
+            this.Historial.Text = "Historial";
+            this.Historial.UseVisualStyleBackColor = false;
+            this.Historial.Click += new System.EventHandler(this.Historial_Click);
             // 
             // CalculatorInput
             // 
             this.CalculatorInput.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.CalculatorInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalculatorInput.Location = new System.Drawing.Point(28, 98);
-            this.CalculatorInput.Multiline = true;
+            this.CalculatorInput.MaxLength = 3000;
             this.CalculatorInput.Name = "CalculatorInput";
-            this.CalculatorInput.Size = new System.Drawing.Size(423, 113);
+            this.CalculatorInput.Size = new System.Drawing.Size(423, 83);
             this.CalculatorInput.TabIndex = 20;
             this.CalculatorInput.TextChanged += new System.EventHandler(this.CalculatorInput_TextChanged);
             // 
@@ -325,7 +340,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(485, 631);
+            this.ClientSize = new System.Drawing.Size(475, 643);
             this.Controls.Add(this.CalculatorView);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -359,6 +374,7 @@
         private System.Windows.Forms.Button AC;
         private System.Windows.Forms.Panel CalculatorView;
         private System.Windows.Forms.TextBox CalculatorInput;
+        private System.Windows.Forms.Button Historial;
     }
 }
 
