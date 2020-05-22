@@ -13,11 +13,14 @@ namespace Lab7_POO_DiegoPinochet
 {
     public partial class Form1 : Form
     {
-        List<double> operationsResult = new List<double>();
-        List<string> operations = new List<string>();
-        public Form1()
+        List<double> operationsResult;
+        List<string> operations;
+
+        public Form1(List<double> OperationResult, List<string> Operations)
         {
             InitializeComponent();
+            this.operationsResult = OperationResult;
+            this.operations = Operations;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -193,13 +196,15 @@ namespace Lab7_POO_DiegoPinochet
         private void Historial_Click(object sender, EventArgs e)
         {
             //Suponiendo que seria el hisyorial mientras se tiene encendida la calculadora...
-            //historialPanel.BringToFront();
+            HistorialDisplay.BringToFront();
+            string var = "";
+            for(int i = 0; i < operations.Count(); i++)
+            {
+                var += (operations[i] + " = " + operationsResult[i] + "\n");
+                
+            }
+            HistorialOutput.Text = var;
 
-        }
-
-        private void historialOut_Click(object sender, EventArgs e)
-        {
-            CalculatorView.BringToFront();
         }
 
         private void CalculatorInput_TextChanged(object sender, EventArgs e)
@@ -242,6 +247,16 @@ namespace Lab7_POO_DiegoPinochet
                 var = null;
             }
             return var;
+        }
+
+        private void HistorialOut_Click_1(object sender, EventArgs e)
+        {
+            CalculatorView.BringToFront();
+        }
+
+        private void HistorialView_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

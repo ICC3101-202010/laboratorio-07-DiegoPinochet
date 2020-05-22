@@ -2,6 +2,7 @@
 {
     partial class Form1
     {
+
         /// <summary>
         /// Variable del diseñador necesaria.
         /// </summary>
@@ -51,7 +52,12 @@
             this.CalculatorView = new System.Windows.Forms.Panel();
             this.Historial = new System.Windows.Forms.Button();
             this.CalculatorInput = new System.Windows.Forms.TextBox();
+            this.HistorialDisplay = new System.Windows.Forms.Panel();
+            this.HistorialLabel = new System.Windows.Forms.Label();
+            this.HistorialOut = new System.Windows.Forms.Button();
+            this.HistorialOutput = new System.Windows.Forms.Label();
             this.CalculatorView.SuspendLayout();
+            this.HistorialDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // CalculatorText
@@ -310,7 +316,7 @@
             this.CalculatorView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalculatorView.Location = new System.Drawing.Point(0, 0);
             this.CalculatorView.Name = "CalculatorView";
-            this.CalculatorView.Size = new System.Drawing.Size(475, 643);
+            this.CalculatorView.Size = new System.Drawing.Size(494, 688);
             this.CalculatorView.TabIndex = 20;
             // 
             // Historial
@@ -335,17 +341,65 @@
             this.CalculatorInput.TabIndex = 20;
             this.CalculatorInput.TextChanged += new System.EventHandler(this.CalculatorInput_TextChanged);
             // 
+            // HistorialDisplay
+            // 
+            this.HistorialDisplay.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.HistorialDisplay.Controls.Add(this.HistorialOutput);
+            this.HistorialDisplay.Controls.Add(this.HistorialLabel);
+            this.HistorialDisplay.Controls.Add(this.HistorialOut);
+            this.HistorialDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HistorialDisplay.Location = new System.Drawing.Point(0, 0);
+            this.HistorialDisplay.Name = "HistorialDisplay";
+            this.HistorialDisplay.Size = new System.Drawing.Size(494, 688);
+            this.HistorialDisplay.TabIndex = 21;
+            // 
+            // HistorialLabel
+            // 
+            this.HistorialLabel.AutoSize = true;
+            this.HistorialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistorialLabel.ForeColor = System.Drawing.Color.Gray;
+            this.HistorialLabel.Location = new System.Drawing.Point(25, 19);
+            this.HistorialLabel.Name = "HistorialLabel";
+            this.HistorialLabel.Size = new System.Drawing.Size(215, 58);
+            this.HistorialLabel.TabIndex = 22;
+            this.HistorialLabel.Text = "Historial";
+            // 
+            // HistorialOut
+            // 
+            this.HistorialOut.BackColor = System.Drawing.Color.Gray;
+            this.HistorialOut.Location = new System.Drawing.Point(320, 19);
+            this.HistorialOut.Name = "HistorialOut";
+            this.HistorialOut.Size = new System.Drawing.Size(132, 58);
+            this.HistorialOut.TabIndex = 21;
+            this.HistorialOut.Text = "Historial";
+            this.HistorialOut.UseVisualStyleBackColor = false;
+            this.HistorialOut.Click += new System.EventHandler(this.HistorialOut_Click_1);
+            // 
+            // HistorialOutput
+            // 
+            this.HistorialOutput.AutoSize = true;
+            this.HistorialOutput.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.HistorialOutput.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HistorialOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistorialOutput.Location = new System.Drawing.Point(25, 149);
+            this.HistorialOutput.Name = "HistorialOutput";
+            this.HistorialOutput.Size = new System.Drawing.Size(2, 60);
+            this.HistorialOutput.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(475, 643);
+            this.ClientSize = new System.Drawing.Size(494, 688);
             this.Controls.Add(this.CalculatorView);
+            this.Controls.Add(this.HistorialDisplay);
             this.Name = "Form1";
             this.Text = "Form1";
             this.CalculatorView.ResumeLayout(false);
             this.CalculatorView.PerformLayout();
+            this.HistorialDisplay.ResumeLayout(false);
+            this.HistorialDisplay.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,6 +429,10 @@
         private System.Windows.Forms.Panel CalculatorView;
         private System.Windows.Forms.TextBox CalculatorInput;
         private System.Windows.Forms.Button Historial;
+        private System.Windows.Forms.Panel HistorialDisplay;
+        private System.Windows.Forms.Button HistorialOut;
+        private System.Windows.Forms.Label HistorialLabel;
+        private System.Windows.Forms.Label HistorialOutput;
     }
 }
 

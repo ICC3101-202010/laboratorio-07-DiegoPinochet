@@ -14,9 +14,12 @@ namespace Lab7_POO_DiegoPinochet
         [STAThread]
         static void Main()
         {
+            List<double> operationsResult = new List<double>();
+            List<string> operations = new List<string>();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Application.Run(new Form1(operationsResult,operations));
         }
     }
 }
