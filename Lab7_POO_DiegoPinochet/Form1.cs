@@ -195,7 +195,7 @@ namespace Lab7_POO_DiegoPinochet
 
         private void answer_Click(object sender, EventArgs e)
         {
-            CalculatorInput.Text = operations[operations.Count()-1].ToString();
+            CalculatorInput.Text = operationsResult[operationsResult.Count()-1].ToString();
         }
 
         private void Historial_Click(object sender, EventArgs e)
